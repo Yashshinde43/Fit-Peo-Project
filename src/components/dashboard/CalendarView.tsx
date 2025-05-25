@@ -59,7 +59,7 @@ const CalendarView = () => {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-end  pt-6">
+      <div className="flex items-center justify-end pt-6">
         <button className="flex items-center justify-center h-10 w-10 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors mx-2">
           <Plus className="h-5 w-5" />
         </button>
@@ -68,7 +68,7 @@ const CalendarView = () => {
         </div>
       </div>
 
-      <div className="bg-white rounded-xl p-6">
+      <div className="bg-white rounded-xl p-4 sm:p-6">
         <DatePicker
           selected={selectedDate}
           onChange={(date: Date) => setSelectedDate(date)}
@@ -77,22 +77,21 @@ const CalendarView = () => {
           renderDayContents={renderDayContents}
           calendarClassName="w-full"
           dayClassName={() => "!w-full"}
-          
           timeFormat="HH:mm"
           timeIntervals={30}
         />
         
         <div className="mt-6">
-          <div className="flex space-x-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {appointments.map((appointment) => (
               <div
                 key={appointment.id}
-                className={`flex-1 p-4 ${
+                className={`p-4 ${
                   appointment.highlight ? 'bg-indigo-600 text-white' : 'bg-indigo-50'
                 } rounded-xl`}
               >
                 <div className="flex items-center justify-between">
-                  <div>
+                  <div className="space-y-1">
                     <h3 className={`font-medium ${appointment.highlight ? 'text-white' : 'text-indigo-900'}`}>
                       {appointment.title}
                     </h3>
