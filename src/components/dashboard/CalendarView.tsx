@@ -3,7 +3,7 @@ import DatePicker from 'react-datepicker';
 import { format } from 'date-fns';
 import { Plus } from 'lucide-react';
 import "react-datepicker/dist/react-datepicker.css";
-import { appointments } from '../../data/appointmentData'; 
+import { appointments } from '../../data/appointmentdata'; 
 
 
 const CalendarView = () => {
